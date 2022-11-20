@@ -86,8 +86,8 @@ h2
 
 .container
 {
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
@@ -98,6 +98,20 @@ h2
   background-color: var(--form-bg);
 }
 
+.input-and-button{
+  display: flex;
+  flex-direction: row;
+}
+
+.result{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.result-text{
+  text-decoration: none;
+}
 /* form
 {
   width: 300%;

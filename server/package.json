@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000s\u0000m\u0000a\u0000l\u0000l\u0000i\u0000f\u0000y\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.7.2",
+    "node-url-shortener": "^2.0.3",
+    "randomstring": "^1.2.3",
+    "url-shortener-express": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaut123456/smallify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gaut123456/smallify/issues"
+  },
+  "homepage": "https://github.com/gaut123456/smallify#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

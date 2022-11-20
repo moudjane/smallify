@@ -5,9 +5,24 @@ import { FaToggleOn } from "react-icons/fa";
 import { FaToggleOff } from "react-icons/fa";
 import { BsFillSunFill } from "react-icons/bs";
 import { BsFillMoonFill } from "react-icons/bs";
+import axios from "axios";
+import { useState } from "react";
 
 function App() {
+  const [urlinput, seturlInput] = useState('')
+  const [linkid, setlinkid] = useState({})
+  function postdata(url) {
+    axios.post('http://localhost:8000/create', {
+      url: url
+    })
+      .then((response) => {
+        console.log(response);
+        setlinkid(response);
 
+      }, (error) => {
+        console.log(error);
+      });
+  }
   const [theme, setTheme] = useLocalStorage(
     "theme" ? "dark" : "light",
     "light"
@@ -23,15 +38,22 @@ function App() {
       <h1>SMALLIFY</h1>
       <div>
         <div className="container">
-          <form>
-            <input type="url"
+          <div className="input-and-button">
+            <input
+              onChange={e => seturlInput(e.target.value)}
+              value={urlinput}
+              type="url"
               name="url"
               id="url"
-              placeholder="https://example.com"
-              pattern="https://.*" size="30"
+              placeholder="https://example.com/"
+              // pattern="" 
+              size="30" autocomplete="off"
               required />
-            <button>CONVERT</button>
-          </form>
+            <button onClick={() => postdata(urlinput)}>CONVERT</button>
+          </div>
+          <div className="result">
+            <a className="result-text" href={linkid.data}>{linkid.data}</a>
+          </div>
         </div>
       </div>
       <div className="theme-toggle">
