@@ -1,1 +1,1 @@
-Shorten your link with Smallify.link
+Shorten your link with https://smallify.link
