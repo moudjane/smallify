@@ -33,6 +33,12 @@ function App() {
     setTheme(newTheme);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      postdata(urlinput);
+    }
+  };
+
   return (
     <div className="App" data-theme={theme}>
       <h1>SMALLIFY</h1>
@@ -46,13 +52,14 @@ function App() {
               name="url"
               id="url"
               placeholder="https://example.com/"
+              onKeyDown={handleKeyDown}
               // pattern="" 
               size="30" autocomplete="off"
               required />
             <button onClick={() => postdata(urlinput)}>CONVERT</button>
           </div>
           <div className="result">
-            <a className="result-text" href={linkid.data}>{linkid.data}</a>
+            <a className="result-text" rel="noreferrer" target="_blank" href={linkid.data}>{linkid.data}</a>
           </div>
         </div>
       </div>
